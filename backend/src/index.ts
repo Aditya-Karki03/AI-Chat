@@ -12,3 +12,5 @@ app.get("/", (req: Request, res: Response) => {
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+//learn about what is an http server
