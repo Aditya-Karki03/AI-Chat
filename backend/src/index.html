@@ -62,4 +62,17 @@
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
   </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const form = document.getElementById("form");
+    const input = document.querySelector("#input");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("chat message", input.value);
+        input.value = "";
+      }
+    });
+  </script>
 </html>
